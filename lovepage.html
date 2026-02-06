@@ -1,0 +1,226 @@
+<!-- lovepage.html (New Page - Accessible only after clicking "Be Mine") -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Our Love Story – Valentine's Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #ff9aa2 0%, #ff758c 50%, #ff4d6d 100%);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        /* Floating Hearts Background */
+        .hearts-bg {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            transform: rotate(-45deg);
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+            animation: float linear infinite;
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+        }
+        .heart::before { top: -15px; left: 0; }
+        .heart::after { left: 15px; top: 0; }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(-45deg) scale(0.5); opacity: 0; }
+            20% { opacity: 0.9; }
+            100% { transform: translateY(-20vh) rotate(-45deg) scale(1.1); opacity: 0; }
+        }
+        header {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 100px 20px 60px;
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 6.5rem;
+            color: #fff;
+            text-shadow: 0 0 30px rgba(255, 20, 147, 0.8);
+            margin-bottom: 10px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #ff1493, 0 0 40px #ff1493; }
+            to { text-shadow: 0 0 40px #ff1493, 0 0 80px #ff1493; }
+        }
+        .subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8rem;
+            color: #ffebee;
+            margin-top: -20px;
+        }
+        main {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
+            padding: 50px 30px;
+            margin: 40px auto;
+            max-width: 700px;
+            border: 2px solid rgba(255, 182, 193, 0.5);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .heart-icon {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            color: #ff3366;
+            animation: beat 1.4s infinite;
+        }
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            margin: 25px 0;
+            color: #fff9;
+        }
+        .message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            color: #fff;
+            margin: 50px 0;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 60px 0 40px;
+        }
+        .btn {
+            padding: 16px 48px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(45deg, #ff3366, #ff6b81);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(255, 51, 102, 0.4);
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-6px) scale(1.08);
+            box-shadow: 0 15px 35px rgba(255, 51, 102, 0.6);
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #fff;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #ffebee;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 10;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 4.8rem; }
+            .subtitle { font-size: 2.2rem; }
+            .message { font-size: 2.6rem; }
+            .buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+<div class="hearts-bg" id="heartsContainer"></div>
+<header>
+    <h1>Iam all yous My Love</h1> 
+    <div class="subtitle">Thank U for clicking Yes ♡</div>
+</header>
+<main>
+    <div class="card">
+        <div class="heart-icon">💖</div>
+        <h2 style="font-family: 'Great Vibes', cursive; font-size: 3.5rem; margin-bottom: 30px;">
+            Yes, I Am Yours! and alwyas be your only no one can still me from U
+        </h2>
+        <p>It's not been long that we have started to talk but yo short period of time ma panee U have understand me so well that i can share my each and every thing to U. My highes my lows from samll things to big moments of my life 
+            i can tell u everything and anything beacuse ik u will never judge me. U also have share your each and everything to me. Ik i may not be the ideal one for u iam not so perfect for u but i will do my best i will give my best to be your perfect man.
+          But i want to tell u that u are the perfect one for me. The God has give me the most precious gift as u in my entire life and for this maile God lai jati thanks garyane  kamm hunxa. The last thing i want to be blessed form the God is U and life long timro shatha and I Kismat Pokharel son of Shree Krishna Pokharel and Manu Dhakal Pokharel promise U that I will never leave u alone 
+        never let u down never break your trust i will respect U and yours emotions i will always lisent to U i will alway be honest and loyal to U i will be always available for U will always support U emotionally and mentally my love rw yo Valentine's Day ko lai matri hoina hai with me timro haryak din Valentine's Day there will be 356 day Valentine's Day for u My LOVE </p>
+        <p class="message">I believe we are together forever, through every sunrise and sunset I LOVE U Mrs.Dr.Sugarika Sapkota Pokharel ♡</p>
+        <div class="buttons">
+            <button class="btn btn-secondary" onclick="window.location.href='index.html'">Back to Start</button>
+        </div>
+    </div>
+</main>
+<footer>
+    Made with pure love, Happy Valentine's Day
+</footer>
+<script>
+    // Check if accessed via button click
+    if (!localStorage.getItem('beMineClicked')) {
+        window.location.href = 'index.html';
+    } else {
+        localStorage.removeItem('beMineClicked');
+    }
+    // Create floating hearts
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+       
+        // Random position & size
+        const size = Math.random() * 20 + 15;
+        heart.style.width = size + 'px';
+        heart.style.height = size + 'px';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = Math.random() * 8 + 8 + 's';
+        heart.style.animationDelay = Math.random() * 5 + 's';
+       
+        // Random pink/red shade
+        const hue = Math.random() * 20 + 330; // 330–360 = pink-red range
+        heart.style.background = `hsl(${hue}, 90%, 65%)`;
+       
+        document.getElementById('heartsContainer').appendChild(heart);
+       
+        setTimeout(() => heart.remove(), 15000);
+    }
+    // Generate hearts continuously
+    setInterval(createHeart, 400);
+    // Initial burst of hearts
+    for(let i = 0; i < 25; i++) {
+        setTimeout(createHeart, i * 150);
+    }
+</script>
+</body>
+</html>
